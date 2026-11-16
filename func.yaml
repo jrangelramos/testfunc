@@ -1,4 +1,12 @@
 specVersion: 0.36.0
 name: testfunc
 runtime: node
+registry: image-registry.openshift-image-registry.svc:5000/default
 created: 2026-11-16T17:15:35.268510851-03:00
+build:
+  git:
+    url: https://github.com/jrangelramos/testfunc
+    revision: main
+  builder: s2i
+deploy:
+  image: image-registry.openshift-image-registry.svc:5000/default/testfunc:latest
